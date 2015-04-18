@@ -20,4 +20,6 @@ user_insure = User.create! email: 'gready_insure@test.com', password: '123456', 
 
 car = Car.create! name: 'audi rs', uin: 'а741ка', users: [user_user,user_tech,user_insure]
 insurance = Insurance.create! uin: "112233", users: [user_user,user_tech,user_insure], car: car
-
+event_1 = Event.create! user: user_user, message: "Что с моей тачкой чуваки!", car: car
+event_2 = Event.create! user: user_tech, message: "Все окей чиним, заказали запчасти!", car: car
+event_3 = Event.create! user: user_insure, message: "Давайте быстрей деньги уже отправили!", car: car

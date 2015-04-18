@@ -1,3 +1,15 @@
 .row
-  - current_user.insurances.each do |sure|
-    = sure.uin
+  .col-md-8.col-md-offset-2
+    table.table.table-bordered
+      thead
+        tr
+          th Автомобиль
+          th Гос. номер
+          th Страховое свидетельство
+      tbody
+        - current_user.insurances.each do |sure|
+          tr
+            td = link_to sure.car.name, car_path(sure.car)
+            td = sure.car.uin
+            td = sure.uin
+        

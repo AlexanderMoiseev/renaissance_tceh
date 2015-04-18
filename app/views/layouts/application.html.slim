@@ -16,12 +16,19 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
+          /ul.nav.navbar-nav
+            /- if user_signed_in?
+              /li
+              /li
+              /li
+              /li
+                /= link_to "Личный кабинет", insurances_path
         #collapse
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                   li
-                    = current_user.email
+                    = link_to current_user.email, insurances_path
                   li
                     = link_to( destroy_user_session_path) { '<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>'.html_safe}
     .container.custom-container

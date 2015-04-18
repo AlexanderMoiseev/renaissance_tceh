@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  get 'events/create'
+
   devise_for :users
   root 'index#home'
 
   resources :cars do
+    resources :events do
+    end
   end
 
-  resources :events do
-  end
 
   resources :insurances do
   end
