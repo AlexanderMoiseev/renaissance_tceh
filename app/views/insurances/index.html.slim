@@ -1,15 +1,20 @@
 .row
   .col-md-8.col-md-offset-2
-    table.table.table-bordered
-      thead
-        tr
-          th Автомобиль
-          th Гос. номер
-          th Страховое свидетельство
-      tbody
-        - current_user.insurances.each do |sure|
-          tr
-            td = link_to sure.car.name, car_path(sure.car)
-            td = sure.car.uin
-            td = sure.uin
-        
+      - current_user.insurances.each do |sure|
+        .insure-element
+          .row
+            .col-md-10.col-md-offse-1
+              .h1 
+                = link_to "Страховой полис номер #{sure.uin}", car_path(sure.car)
+          .row
+            .col-md-5
+              = image_tag("reness_logo.jpg", class: "img-responsive")
+            .col-md-7
+              |Тут очень важная информация по типу стразового полиса
+          .row
+            .col-md-6.col-md-offset-3
+              a.btn.btn-default.btn-block.call-back Заказать обратный звонок
+
+
+
+
