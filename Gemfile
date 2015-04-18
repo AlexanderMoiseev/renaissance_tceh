@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "compass-rails",  github: "Compass/compass-rails", branch: "master"
 gem 'slim-rails'
 gem "devise"
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'

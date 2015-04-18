@@ -6,6 +6,23 @@ html
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
- 
+
   body
-    = yield
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #collapse
+          #navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              - if user_signed_in?
+                  li
+                    = current_user.email
+                  li
+                    = link_to( destroy_user_session_path) { '<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>'.html_safe}
+    .container.custom-container
+      = yield
