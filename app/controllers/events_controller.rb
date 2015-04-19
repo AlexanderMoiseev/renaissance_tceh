@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_user!
+
   def create
     car = Car.find params[:car_id]
     user = current_user

@@ -10,16 +10,20 @@
   Role.find_or_create_by({name: role})
 end
 
+Event.destroy_all
 Car.destroy_all
 User.destroy_all
 Insurance.destroy_all
-Event.destroy_all
 user_user = User.create! email: 'angry_user@test.com', password: '123456', role: Role.find_by_name("user")
 user_tech = User.create! email: 'lazy_tech@test.com', password: '123456', role: Role.find_by_name("tech")
-user_insure = User.create! email: 'gready_insure@test.com', password: '123456', role: Role.find_by_name("insure")
+user_insure = User.create! email: 'greedy_insure@test.com', password: '123456', role: Role.find_by_name("insure")
 
 car = Car.create! name: 'audi rs', uin: 'а741ка', users: [user_user,user_tech,user_insure]
 insurance = Insurance.create! uin: "112233", users: [user_user,user_tech,user_insure], car: car
+Event.create! user: user_insure, message: "Страховой случай находится в рассмотрении", car: car
+Event.create! user: user_insure, message: "Страховой случай одобрен", car: car
+Event.create! user: user_insure, message: "Пакет документов отправлен СТО", car: car
+Event.create! user: user_insure, message: "Вы можете отправить машину на станцию СТО", car: car
 event_1 = Event.create! user: user_user, message: "Что с моей тачкой чуваки!", car: car
 event_2 = Event.create! user: user_tech, message: "Все окей чиним, заказали запчасти!", car: car
 event_3 = Event.create! user: user_insure, message: "Давайте быстрей деньги уже отправили!", car: car

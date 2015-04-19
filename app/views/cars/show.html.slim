@@ -10,13 +10,28 @@
   - @car.events.each_with_index do |event, index|
     ul.timeline
       li class="#{'timeline-inverted' if index.odd?}"
-        .timeline-badge
+        .timeline-badge.success
           i.glyphicon class="#{event.user.get_icon}"
         .timeline-panel
           .timeline-heading
-            h4.timeline-title Ответ: #{event.user.email}
+            h4.timeline-title 
+              |Ответ: 
+              - if current_user.is_insure?
+                = link_to "#{event.user.email}",  user_path(event.user)
+              - else
+                = event.user.email
             p
               small.text-muted
                 i.glyphicon.glyphicon-time #{event.created_at}
           .timeline-body
             p #{event.message}
+          hr
+          .btn-group
+            button.btn.btn-primary.btn-sm.dropdown-toggle data-toggle="dropdown" type="button" 
+              i.glyphicon.glyphicon-paperclip
+              span.caret
+            ul.dropdown-menu
+              li
+                a href="#"  Прикрепить документ
+              li
+                a href="#"  Пометить как важное

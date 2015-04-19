@@ -21,4 +21,16 @@ class User < ActiveRecord::Base
       "glyphicon-lock"
   end
 
+  def is_user?
+    role.name == "user"
+  end
+
+  def is_tech?
+    role.name == "tech"
+  end
+
+  def is_insure?
+    role.name == "insure"
+  end
+
 end

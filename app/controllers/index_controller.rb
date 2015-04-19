@@ -8,7 +8,7 @@ class IndexController < ApplicationController
   def choose_room
     if current_user.role.name == "user"
        insurances_path
-      end
+    end
+       insurances_path
   end
-
 end
