@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
-gem 'rails', '4.2.1'
+gem 'rails'
 gem 'pg'
-gem 'sass-rails', '<= 5.0.1'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'jbuilder'
+gem 'sdoc', group: :doc
 gem "compass-rails",  github: "Compass/compass-rails", branch: "master"
 gem 'slim-rails'
 gem "devise"
@@ -15,7 +15,7 @@ gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
@@ -31,5 +31,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rails_12factor', group: :production
-ruby "2.2.0"
 

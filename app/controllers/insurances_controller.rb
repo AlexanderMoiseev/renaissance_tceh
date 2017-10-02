@@ -1,5 +1,5 @@
-class InsurancesController < ApplicationController
-  before_filter :authenticate_user!
+class before_actionController
+  before_action :authenticate_user!
 
   def index
   end
