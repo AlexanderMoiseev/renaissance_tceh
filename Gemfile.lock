@@ -136,6 +136,7 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     rack (2.0.3)
+    rack-cors (1.0.1)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -263,6 +264,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   pry-stack_explorer
+  rack-cors
   rails
   rails-assets-bootstrap!
   rails-assets-jqueryui!
@@ -273,6 +275,7 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring
+  sprockets
   turbolinks
   uglifier
   web-console

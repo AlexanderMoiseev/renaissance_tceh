@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'index#home'
+  get '/api' => 'application#index', defaults: { format: :json }
+  get '/api2' => 'application#index', defaults: { format: :json }
 
   resources :cars do
     resources :events do

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'rails'
 gem 'pg'
+gem 'sprockets'
+gem 'rack-cors'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
